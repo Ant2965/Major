@@ -1,26 +1,42 @@
-const express =require("express")
-const mongoose= require("mongoose")
+const express = require("express")
+const mongoose = require("mongoose")
 const app = express();
+const Listing = require ("./models/listing.js")
 
 
 const url = "mongodb://127.0.0.1:27017/wanderlust"
 
 
-main().then(()=>{
+main().then(() => {
     console.log("connect to db")
 })
-.catch((err)=>{
-    console.log(err)
-})
+    .catch((err) => {
+        console.log(err)
+    })
 
-async function main(){
+async function main() {
     mongoose.connect(url)
 }
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("Hi i am root")
 })
 
-app.listen(8082,()=>{
+
+app.get("/testlisting", async (req, res) => {
+    let samplelisting = new Listing({
+        title: "My new villa",
+        description: "by rhe beach",
+        price: 21000,
+        location: "calcultta",
+        country: "India"
+
+    })
+    await samplelisting.save();
+    console.log("sample data saved")
+    res.send("success test")
+})
+
+app.listen(8082, () => {
     console.log("server on on 8081")
 })
