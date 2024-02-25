@@ -37,6 +37,6 @@ app.get("/testlisting", async (req, res) => {
     res.send("success test")
 })
 
-app.listen(8082, () => {
-    console.log("server on on 8081")
+app.listen(8069, () => {
+    console.log("server on on 8069")
 })
