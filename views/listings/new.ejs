@@ -6,26 +6,22 @@
     <title>Wanderlust</title>
 </head>
 <body>
-    <form action="/listings" method="POSR">
+    <form action="/listings" method="POST">
 
-        <input type="text" name="title" placeholder="enter title">
+        <input type="text" name="listing[title]" placeholder="enter title">
         <br>
-        <textarea type="text" name="description" placeholder="enter description"></textarea>
+        <textarea type="text" name="listing[description]" placeholder="enter description"></textarea>
         <br>
-        <input type="number" name="price" placeholder="enter price">
+        <input type="number" name="listing[price]" placeholder="enter price">
         <br>
-        <input type="text" name="location" placeholder="enter location">
+        <input type="text" name="listing[location]" placeholder="enter location">
         <br>
-        <input type="text" name="image" placeholder="enter URL/Link">
+        <input type="text" name="listing[image]" placeholder="enter URL/Link">
         <br>
-        <input type="text" name="country" placeholder="enter country">
+        <input type="text" name="listing[country]" placeholder="enter country">
         <br>
 
         <button>ADD</button>
-
-
-
-
     </form>
 </body>
 </html>
