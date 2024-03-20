@@ -24,6 +24,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine('ejs',ejsMate)
+app.use(express.static(path.join(__dirname,"/public")));
 app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
@@ -89,6 +90,6 @@ app.delete("/listings/:id", async (req, res) => {
 //   res.send("successful testing");
 // });
 
-app.listen(6080, () => {
+app.listen(6010, () => {
   console.log("server is listening to port 8080");
 });
