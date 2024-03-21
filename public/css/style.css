@@ -1,6 +1,9 @@
-/* body{
-    background-color: pink;
-} */
+body{
+
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  
+
+}
 
 
 .navbar{
@@ -79,8 +82,8 @@ background-color: white;
 .card-body{
     padding: 0 !important;
 }
-.card-text{
-    font-weight: 400;
+.card-text p{
+    font-weight: 400 !important;
 }
 
 
