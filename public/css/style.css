@@ -118,7 +118,27 @@ background-color: white;
 .edit-btn{
     background-color: #fe424d !important;
     border: none !important;
+
+
+}
+
+/*show page*/
+
+.show-img{
+    height: 30vh;
 }
 
 
-// foihidhd
+
+
+
+.btns{
+    display: flex;
+
+}
+
+
+.show-card{
+    padding-left:0 ;
+    padding-right: 0;
+}
