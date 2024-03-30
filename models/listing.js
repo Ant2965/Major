@@ -9,13 +9,18 @@ const listingSchema = new Schema({
   description: String,
   image: {
     type: String,
-
-    set: (v) => v === "" ? "https://unsplash.com/photos/man-sitting-on-rock-surrounded-by-water--Q_t4SCN8c4" : v,
+    set:(v) => v === "" ? "https://unsplash.com/photos/man-sitting-on-rock-surrounded-by-water--Q_t4SCN8c4" : v,
 
   },
   price: Number,
   location: String,
   country: String,
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref:"Review"
+    },
+  ],
 });
 
 const Listing = mongoose.model("Listing", listingSchema);

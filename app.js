@@ -5,6 +5,7 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate")
+const Review =require("./models/review.js")
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
 main()
@@ -89,6 +90,22 @@ app.delete("/listings/:id", async (req, res) => {
 //   console.log("sample was saved");
 //   res.send("successful testing");
 // });
+
+
+// reviews
+
+
+app.post("/listings/:id/reviews",async(req,res)=>{
+let listing= await Listing.findById(req.params.id)
+let newReview =new Review(req.body.review);
+listing.reviews.push(newReview);
+
+await newReview.save();
+await listing.save();
+
+console.log("new review saves");
+res.send("new review")
+})
 
 app.listen(6010, () => {
   console.log("server is listening to port 8080");
